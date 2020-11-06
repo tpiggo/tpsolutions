@@ -52,18 +52,18 @@ body {
 #header-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 25% 0;
+    padding: 25% 5%;
 }
 
 .header-item {
     margin: 2em;
-    padding: 1.5em;
-    font-size: 15px;
+    padding: 2em;
+    font-size: 20px;
 }
-
     .header-item.header-right {
         background: var(--background-black-transparent);
         border-radius: var(--border-radius-large);
+        font-family: 'Alegreya Sans', sans-serif;
     }
 
 #header-right-text {
@@ -78,7 +78,6 @@ body {
     margin:0;
     padding: 0.5em;
     text-decoration: none;
-    font-size: 15px;
     background-color: transparent;
     border: 1px solid lightblue;
     border-radius: var(--border-radius-small);
@@ -107,6 +106,17 @@ body {
 
     .footer-item{
         padding: 0 0.5em;
+    }
+
+    #final-footer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #final-footer .footer-link{
+        text-decoration: none;
+        color: black;
+        margin: 0.83em 0.4em;
     }
 
     /* TODO: Media Querys for responsive design*/

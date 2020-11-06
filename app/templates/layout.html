@@ -29,7 +29,8 @@
     <header id="header">
         <div id="header-box">
             <div class="header-item">
-                Welcome to my page!
+                <img src="{{ url_for('.static', filename='images/t-logo2.jpg') }}"/>
+                <p id="fun-box">DON'T WAIT FOR OPPORUNITY. <br><b>CREATE IT.</b></p>
             </div>
             <div class="header-item header-right">
                 <p id="header-right-text">
@@ -69,17 +70,28 @@
             </div>
             <div class="footer-item" id="contact-me">
                 <h3>Say Hello!</h3>
-                <div id="contact-info">
+                <div  class="contact-info" id="email">
                     Email: piggott291@gmail.com
+                </div>
+                <div id="phone" class="contact-info">
+                    Phone: 514-231-5515
                 </div>
             </div>
         </div>
         <div id="final-footer">
-            <i class="fas fa-envelope-square"></i>
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter-square"></i>
-            &copy; 2020 Timothy Piggott
+            <a class="footer-link" href="mailto:piggott291@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a class="footer-link" href="https://github.com/tpiggo">
+                <i class="fab fa-github"></i>
+            </a>
+            <a class="footer-link" href="facebook.com/timothy.piggott.7">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="footer-link" href="https://linkedin.com">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <p>&copy; 2020 Timothy Piggott</p>
         </div>
     </footer>
 </body>
