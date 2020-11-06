@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block head %}{% endblock %}
+{% block main_container %}
+<div id="project-box">
+    <h1 id="project-title">Simple User Level Threading Library</h1>
+    <div id="project-description">
+        A simple user level threading library for the C programming language. Using a First Come First Serve (FCFS)
+        scheduling algorithm, the simple user level threads had two types of operations. Computation operations or
+        IO operations. These operations were mapped to two kernel level threads namely: Compute executor and IO
+        executor. For the computation operations, the user level threads were given the entire CPU in order to
+        perform their task. The time of switching was left up to the task, who either ended execution or yielded the
+        CPU to the next task. IO threads were blocking for opens and reads. Kernel threads must wait until all tasks
+        are complete before joining the main thread.
+    </div>
+    <a class="github-link" href="https://github.com/tpiggo/simple_user_threads">Source Code</a>
+</div>
+{% endblock %}

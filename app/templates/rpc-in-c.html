@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block head %}{% endblock %}
+{% block main_container %}
+<div id="project-box">
+    <h1 id="project-title">Remote Procedure Call Server</h1>
+    <div id="project-description">
+        Utilizing socket programming in a low level language such as C, the remote procedure call server had two
+        components: Front and back ends. For the front end, a terminal level GUI was used (very basic) where the user
+        is able to call backend functions which have been exposed to them. From the backends perspective, it is
+        agnostic to the number of frontend clients it has. For the purpose of deeper isolation and concurrent running,
+        the use of a multi-processes backend was chosen. Every connection had a distinct process which handled the
+        connection with the parent process handling the creation, maintenance and shutdown of the program as a whole.
+    </div>
+    <a class="github-link" href="https://github.com/tpiggo/rpc_server">Source Code</a>
+</div>
+{% endblock %}
