@@ -58,13 +58,80 @@
 }
 
 a.project-link{
-    width: 100%:
+    width: 100%;
     height: 100%;
 }
 .image-hover{
     background-color: var(--background-black-transparent);
-    width: 100%:
+    width: 100%;
     height: 100%;
     position: absolute;
 }
 /* TODO: Media Querys for responsive design*/
+
+#skills{
+    background-color: var(--background-color);
+}
+
+.skills-container{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.l1{
+    grid-column: span 1;
+}
+
+.l2{
+    grid-column: span 2;
+}
+
+.l3{
+    grid-column: span 3;
+}
+
+.l4{
+    grid-column: span 4;
+}
+
+.skills-item{
+    padding:1em;
+    background-color: var(--main-color);
+    margin: 0.5em 0;
+    border: 1px solid var(--background-color);
+    border-radius: 0.5em;
+    text-align: center;
+}
+
+.skills-item:hover{
+    background-color: var(--background-color);
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+#contact{
+    display: flex;
+    flex-wrap: flex;
+}
+
+#contact-container{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.6rem;
+    justify-content: center;
+}
+
+.contact-link{
+    text-decoration: none;
+    color: var(--main-color);
+    border-radius: 1em;
+    border: 2px solid var(--main-color);
+    padding: 1em;
+    margin: .2em .4em;
+}
+
+.contact-link:hover{
+    background-color: var(--main-color);
+    color:white;
+
+}

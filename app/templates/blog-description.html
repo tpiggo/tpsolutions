@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
-{% block head %}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('.static', filename='styles/project-pages.css') }}">
+{% endblock %}
 {% block main_container %}
-<div id="project-box">
+<div id="project-container">
     <img class="project-image" src="">
     <h1 id="project-title">Basic Blog</h1>
     <div id="project-description">
@@ -10,8 +12,8 @@
         intimate knowledge of all the languages used in front end development without the use of frameworks. A links lead
         to random internet websites, as per project requirements. Hidden under the "Signup" link, there is another part to
         the project: A registration page.
-        <a class="code-link" href="/basic-blog/">View the Project</a>
-        <a class="github-link" href="https://github.com/tpiggo/blog-project">Source Code</a>
     </div>
+    <a id="code-link"  class="project-link" href="/basic-blog/">View the Project</a>
+    <a id="github-link" class="project-link" href="https://github.com/tpiggo/blog-project">Source Code</a>
 </div>
 {% endblock %}

@@ -1,0 +1,27 @@
+#project-container{
+    padding: 2em 10%;
+}
+
+#project-title{
+    text-align: center;
+}
+
+#project-description{
+    margin: 1em 0;
+}
+
+.project-link{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: 0.83em;
+    background-color: #5f95ed;
+    border-radius: 0.5em;
+}
+
+.project-link:hover{
+    background-color: blue;
+    color: white;
+    padding: 1.2em;
+    font-size: 16px;
+}

@@ -1,4 +1,8 @@
 {% extends "layout.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('.static', filename='styles/index.css') }}">
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+{% endblock %}
 {% block main_container %}
     <div class="content-box" id="about">
         <div class="about-item">
@@ -26,11 +30,11 @@
             </div>
             <div id="pid2" class="project-item">
                 <img class='project-image' src="{{ url_for('.static', filename='images/blog-page.png') }}">
-                <p>Building an Apache backend login and registration handler with encryption</p>
+                <p>Node.js, Express.js and MongoDB Project inspired by Traversy Media</p>
             </div>
         </div>
-        <h3> Web Development</h3>
-
+        <!-- Compsci projects -->
+        <h3> Computer Science Projects</h3>
         <div class="projects-box">
             <div id="pid3" class="project-item">
                 <img class='project-image' src="{{ url_for('.static', filename='images/blog-page.png') }}">
@@ -45,30 +49,56 @@
     </div>
     <div class="content-box" id="skills">
         <!-- Languages -->
-        <h3>Languages:</h3>
-        <div>
-            <div class="">HTML5</div>
-            <div class="">CSS3</div>
-            <div class="">Javascript</div>
-            <div class="">Python</div>
-            <div class="">PostgreSQL</div>
-            <div class="">C</div>
-            <div class="">oCaml</div>
-            <div class="">Java</div>
+        <h3>Technological Skills:</h3>
+        <div class="skills-container">
+            <div class="skills-item l2">HTML5 <i class="fab fa-html5"></i></div>
+            <div class="skills-item l2">CSS3 <i class="fab fa-css3-alt"></i></div>
+            <div class="skills-item l3">Javascript <i class="fab fa-js"></i></div>
+            <div class="skills-item l1">MongoDB <span class="iconify" data-icon="logos:mongodb" data-inline="false"></span></div>
+            <div class="skills-item l1">PostgreSQL <span class="iconify" data-icon="cib:postgresql" data-inline="false"></span></div>
+            <div class="skills-item l3">Python <i class="fab fa-python"></i></div>
+            <div class="skills-item l3"><span class="iconify" data-icon="cib:c" data-inline="false"></span></div>
+            <div class="skills-item l1">PHP  <i class="fab fa-php"></i></div>
+            <div class="skills-item l1">GitHub <i class="fab fa-github"></i></div>
+            <div class="skills-item l1">git <i class="fas fa-code-branch"></i></div>
+            <div class="skills-item l1">Bootstrap <i class="fab fa-bootstrap"></i></div>
+            <div class="skills-item l1">jQuery <i class="fas fa-code"></i></div>
+            <div class="skills-item l2">oCaml <span class="iconify" data-icon="simple-icons:ocaml" data-inline="false"></span></div>
+            <div class="skills-item l2">Java <i class="fab fa-java"></i></div>
+            <div class="skills-item l2">React <i class="fab fa-react"></i></div>
+            <div class="skills-item l2">Flask <span class="iconify" data-icon="cib:flask" data-inline="false"></span></div>
         </div>
-        <!-- Frameworks and backend information -->
-        <h3>Backend/Stacks:</h3>
-        <div>
-            <div class="">Node.js, Express, MongoDB, React</div>
-            <div class="">Flask</div>
-            <div class="">Socket Programming in C</div>
         </div>
     </div>
     <div class="content-box" id="contact">
         <!-- TODO -->
-        <i class="fas fa-envelope-square"></i>
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-twitter-square"></i>
+        <div id="contact-foreword-container">
+            <h2>Contact me!</h2>
+            <p> 
+                I would love to work with you, reach out on any of the provided
+                social media links!
+            </p>
+        </div>
+        <div id="contact-container">
+            <a class="contact-link" href="mailto:piggott291@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a class="contact-link" href="https://github.com/tpiggo">
+                <i class="fab fa-github"></i>
+            </a>
+            <a class="contact-link" href="facebook.com/timothy.piggott.7">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="contact-link" href="https://instagram.com/tim_piggott">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="contact-link" href="https://twitter.com/t_piggo"> 
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a class="contact-link" href="https://linkedin.com">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        
     </div>
 {% endblock %}
