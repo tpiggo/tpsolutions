@@ -70,3 +70,4 @@ iOSInjectionProject/
 # Ignore idea folder, useless??
 .idea/
 __pycache__/
+venv/
