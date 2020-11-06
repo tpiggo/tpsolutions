@@ -69,3 +69,4 @@ iOSInjectionProject/
 
 # Ignore idea folder, useless??
 .idea/
+__pycache__/
