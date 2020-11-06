@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='styles/themes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='styles/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='styles/index.css') }}">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('.static', filename='images/t-logo2.jpg') }}"/>
+    <title>TP Solutions</title>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Layout: header portion with body and a footer-->
+    <nav id="navbar-container">
+        <a id="navbar-icon" href="#home"><img id="logo-icon" src="{{ url_for('.static', filename='images/t-logo2.jpg') }}"></a>
+        <div id="nav-right">
+            <a class="navbar-item" href="/#header">Home</a>
+            <a class="navbar-item" href="/#about">About</a>
+            <a class="navbar-item" href="/#projects">Projects</a>
+            <a class="navbar-item" href="/#contact">Contact</a>
+            <a class="navbar-item" href="#">Resume</a>
+            <a class="navbar-item icon"
+               href="javascript:void(0)"
+               onclick="iconClicked()"><i class="fa fa-bars"></i></a>
+        </div>
+    </nav>
+    <header id="header">
+        <div id="header-box">
+            <div class="header-item">
+                Welcome to my page!
+            </div>
+            <div class="header-item header-right">
+                <p id="header-right-text">
+                    Want to work with me? Whether it be to talk about Computer Science or a project,
+                    don't hesitate to get in touch!
+                </p>
+                <a id="header-btn" href="#contact">Connect with me!</a>
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+        {% block main_container %}{% endblock %}
+    </div>
+    <footer class="content-box" id="main-footer">
+        <!-- Need contact and SM info here-->
+        <div class="footer-box">
+            <div class="footer-item" id="full-about-me">
+                <p>Hi! You've finally reached the outro to my page!</p>
+                <p>
+                    I started my journey in the Computer Science field at the age of 18 in CEGEP when I took an introductory course on Programming. From this simple
+                    yet extremely fun, engaging course, I was thrust into the computer science domain. Starting at McGill as a Computer Science Major and Minor in Economics,
+                    I have been pursuing me dreams of programming and economics (weird I know)!
+                </p>
+                <p>
+                    I love to work in teams and develop interesting projects. Moreover, I love to continue my education outside of the classroom. Reading docs and watching
+                    online tutorials in the field, I am confidently acquiring new and fun knowledge.
+                </p>
+                <p>I tend to code my projects from scratch, McGill has taught me well.</p>
+                <p>My other favourite things to do are:</p>
+                <ul>
+                    <li>Tutoring, for computer science or web development.</li>
+                    <li>Contributing and starting new projects (open sourced are always fun!)</li>
+                    <li>Learning and increasing my knowledge in Full Stack development.</li>
+                    <li>Skiing, teaching skiing and serving up cocktails behind the bar!</li>
+                </ul>
+
+            </div>
+            <div class="footer-item" id="contact-me">
+                <h3>Say Hello!</h3>
+                <div id="contact-info">
+                    Email: piggott291@gmail.com
+                </div>
+            </div>
+        </div>
+        <div id="final-footer">
+            <i class="fas fa-envelope-square"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter-square"></i>
+            &copy; 2020 Timothy Piggott
+        </div>
+    </footer>
+</body>
+</html>

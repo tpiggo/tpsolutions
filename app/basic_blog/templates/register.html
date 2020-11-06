@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+        <style>
+            body{
+                min-width: 800px;
+                display:grid;
+                place-items: center;
+                background: linear-gradient(
+                    -45deg, #db8970, #803753, #23a6d5, #25a8a8
+                    );
+                background-size: 400% 400%;
+                font-family:Arial, Helvetica, sans-serif;
+	            animation: gradient 15s ease infinite;
+            }
+            #main-form{
+                width:450px;
+                margin: 20px 0;
+                color: white;
+            }
+            #main-form div.form-box{
+                padding: 10px 20px;
+            }
+            #main-form #form-header{
+                text-align:center;
+            }
+
+            #main-form h2{
+                text-align: center;
+            }
+            .text-form-line{
+                display:grid;
+                grid-template-columns: 21% 54% 25%;
+            }
+            .tinput{
+                margin: 0 5px;
+            }
+            .error-msg{
+                display:inline-block;
+                color:red;
+                font-size: 10px;
+            }
+            #publications{
+                display:grid;
+                place-items: center;
+            }
+            #os-type{
+                display:grid;
+                place-items: center;
+            }
+            .box-header{
+                margin: 5px 0;
+
+            }
+            .inst-p{
+                margin: 5px 0;
+            }
+            #radio-form-line, #books{
+                margin: 5px 0;
+            }
+            #book-selection{
+                padding-top: 5px;
+                color: green;
+            }
+            #submit-button{
+                margin: 10px 0;
+                padding: 10px 0;
+                width: 100%;
+                font-size: 20px;
+                background-color: #1F89C8;
+                color: white;
+                border: none;
+                border-radius: 5px;
+            }
+
+            #p-reg{
+                display: inline-block;
+                padding: 0 20px;
+                font-weight: 600;
+            }
+            #icon{
+                display: inline-block;
+            }
+            #submit-button:hover{
+                background-color:mediumblue;
+            }
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+        </style>
+        <title>Registration Page</title>
+        <link rel="shortcut icon" href="favicon.ico">
+    </head>
+    <body id="main-body">
+        <!-- Form where action and method are blank, therefore should not submit to backend. -->
+        <form id="main-form" onsubmit="onSubmit(event)">
+            <header id="form-header">
+                <h1>Registration Form</h1>
+                <p class="inst-p">Please fill in all the fields and click Register</p>
+            </header>
+            <!-- Each part of the form is wrapped in a div for ease of use when styling -->
+            <!-- First name Div, asks for first name. REQUIRED -->
+            <div id="user-information" class="form-box">
+                <h2 class="box-header">User Information</h2>
+                <div class="text-form-line" id="fname-box">
+                    <label class="tlabel" for="fname">First Name:</label>
+                    <input class="tinput" type="text" id="fname" name="fname" 
+                    oninvalid="onInvalidInput('fnerror', 'First Name')"
+                    onblur="setOnBlur('fname', 'First Name', 'fnerror', 0)"
+                    required>
+                    <div id="fnerror" class="error-msg"></div>
+                </div>
+                <!-- Last Name Div, asks for last name. REQUIRED-->
+                <div class="text-form-line" id="lname-box"> 
+                    <label class="tlabel" for="lname">Last Name:</label>
+                    <input class="tinput" type="text" id="lname" name="lname" 
+                    oninvalid="onInvalidInput('lnerror', 'Last Name')" 
+                    onblur="setOnBlur('lname', 'Last Name', 'lnerror', 1)"
+                    required>
+                    <div id="lnerror" class="error-msg"></div>
+                </div>
+                <!-- Email Div, asks for email. REQUIRED -->
+                <div class="text-form-line" id="email-box">
+                    <label class="tlabel" for="email">Email:</label>
+                    <input class="tinput" type="email" id="email" name="email" 
+                    oninvalid="onInvalidInput('emerror', 'Email')" 
+                    onblur="setOnBlur('email', 'Email', 'emerror', 2)"
+                    required>
+                    <div id="emerror" class="error-msg"></div>
+                </div>
+                <!-- Phone Number Div, asks for phone number. NOT REQUIRED-->
+                <div class="text-form-line" id="phone-box">
+                    <label class="tlabel" for="phone">Phone: </label>
+                    <input class="tinput" type="tel" id="phone" name="phone" placeholder="(555) 555-5555" >
+                    <div id="pherror" class="error-msg"></div>
+                </div>
+            </div>
+            <!-- Publication Div, asks for a book to be chosen. NOT REQUIRED -->
+            <div id="publications"  class="form-box">
+                <h2 class="box-header">Publications</h2>
+                <p class="inst-p">Which book would you like to know about?</p>
+                <select name="book" id="books" 
+                onchange="dropDownChange('books', 'book-selection', 'default-book')">
+                    <!-- First book has none value since "pick a book" is not a value -->
+                    <option id="default-book" value="none"> --- Pick a Book ---</option>
+                    <option>Internet and WWW How to Program</option>
+                    <option>Introduction to Algorithms</option>
+                    <option>Operating System Concepts 10th</option>
+                </select>
+                <div id="book-selection"></div>
+            </div>
+            <!-- OS type div, asks for os information. NOT REQUIRED -->
+            <div id="os-type"  class="form-box">
+                <h2 class="box-header">Operating Systems</h2>
+                <p class="inst-p">Which operating system do you use?</p>
+                <div id="radio-form-line">
+                    <input type="radio" name="os-type" id="windows">
+                    <label for="windows">Windows</label>
+                    <input type="radio" name="os-type" id="macOS">
+                    <label for="macOS">MacOS X</label>
+                    <input type="radio" name="os-type" id="linux">
+                    <label for="linux">Linux</label>
+                    <input type="radio" name="os-type" id="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+            <!-- Submit box, which is a form box, used for styling. -->
+            <div id="submit" class="form-box">
+                <!-- Submit button. We are registering the user here. -->
+                <button type="submit" id="submit-button"><div id='p-reg'>Register</div><i id="icon" class="fas fa-lock"></i></button> 
+            </div>          
+        </form>
+    </body>
+    <script>
+        var error = [true, true, true];
+        var alerted = false;
+        var regex = /\S+@\S+\.\S+/;
+        /**
+         * Function for checking what content was entered.
+         * Returns true if the content was properly entered. False is returned on improper entry.
+         */ 
+        function onBlurTextEvent(element, isEmail){
+            if (isEmail){
+                var answer = regex.test(element.value);
+                return answer;
+            } else if (element.value == ""){
+                return false;
+            }
+            return true;
+        }
+        /**
+         * Function for checking which errors exist.
+         * Returns index of error or -1 to indicate it found none.
+         */ 
+        function errors(){
+            for (var i = 0; i<error.length; i++){
+                if (error[i]){
+                    return i;
+                }
+            }
+            return -1;
+        }
+        /**
+         * Function for handling onBlur events.
+         * On call, the function checks if the text event met the requirements for being proper entry for element.
+         * Displays an error message if the data was entered improperly.
+         * Returns void.  
+         */ 
+        function setOnBlur(element, name, errorElement, index){
+            element = document.getElementById(element);
+            errorElement = document.getElementById(errorElement);
+            var error_msg = name + " is required!";
+            var isEmail = (name=="Email")?true:false;
+            // If the onblurtextevent causes a problem! We will stop. 
+            if(!onBlurTextEvent(element, isEmail)){
+                if (errorElement.innerHTML != error_msg) errorElement.innerHTML = error_msg;
+                error[index] = true;
+            } else {      
+                if(errorElement.innerHTML != "") errorElement.innerHTML = "";
+                error[index] = false;
+            }
+            alerted = false;
+
+            if (errors()<0) {
+                document.getElementById("icon").setAttribute("class", "fas fa-unlock");
+            }
+            else if (document.getElementById("icon").attributes.class != "fas fa-lock"){
+                document.getElementById("icon").setAttribute("class", "fas fa-lock");
+            }
+        }
+        /**
+         * Function for providing output when required field are not filled out properly.
+         * Returns void.
+         */ 
+        function onInvalidInput(errorElement, name){
+            var error_msg = name + " is required!";
+            errorElement = document.getElementById(errorElement);
+            if (errorElement.innerHTML != error_msg) errorElement.innerHTML = error_msg;
+            if (!alerted){
+                alert("Please correct the errors on the page and submit again");
+                alerted = true;
+            }
+        }
+        /**
+         * On Submit, this function will act as the gate keeper for if there is a field not filled out
+         * properly and that HTML builtins do not catch it.
+         * Returns void, stops execution of the submit if an error is found. Allows submit to process 
+         * if no error was found.
+         */ 
+        function onSubmit(event){
+            if (errors()>=0){
+                event.preventDefault();
+                alert("Please correct the errors on the page and submit again");
+            }
+        }
+        /**
+         * On change in the dropdown menu, function will display the chosen element in the specified element.
+         * Returns void.
+         */ 
+        function dropDownChange(element, responseElement, defaultElement){
+            element = document.getElementById(element);
+            defaultElement = document.getElementById(defaultElement);
+            responseElement = document.getElementById(responseElement);
+            if (!(element.value == defaultElement.value)) responseElement.innerHTML = element.value;
+            else document.getElementById("book-selection").innerHTML = "";
+        }
+    </script>
+</html>

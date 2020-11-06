@@ -1,0 +1,114 @@
+/**
+* These are the shared structures which will be shown on all pages.
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#navbar-container {
+    background: var(--background-black-transparent);
+    position: fixed;
+    display: inline-block;
+    width: 95%;
+    padding: 10px 2.5%;
+    border-bottom: 1px solid white;
+}
+
+#logo-icon {
+    width: 25px;
+    height: 25px;
+}
+
+#navbar-container #nav-right {
+    float: right;
+    overflow: hidden;
+}
+
+#navbar-container .navbar-item {
+    text-decoration: none;
+    color: white;
+    padding: 1em 1em;
+}
+
+    #navbar-container .navbar-item.icon {
+        display: none;
+    }
+
+#header {
+    width: 100%;
+    background-image: url("../images/bay-area-stargazing.jpg");
+    background-size: cover;
+    color: white;
+    display: grid;
+    place-items: center;
+}
+
+#header-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 25% 0;
+}
+
+.header-item {
+    margin: 2em;
+    padding: 1.5em;
+    font-size: 15px;
+}
+
+    .header-item.header-right {
+        background: var(--background-black-transparent);
+        border-radius: var(--border-radius-large);
+    }
+
+#header-right-text {
+    margin: 0;
+    margin-bottom: 0.5em;
+    display: inline-block;
+}
+
+#header-btn {
+    text-align: center;
+    display: inline-block;
+    margin:0;
+    padding: 0.5em;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: transparent;
+    border: 1px solid lightblue;
+    border-radius: var(--border-radius-small);
+    /* Have to do this otherwise the button goes into the padding of the parent. Why??? */
+    width: calc(100% - 1.5em);
+    color: lightblue;
+}
+
+    #header-btn:hover {
+        background-color: lightblue;
+        color: white;
+    }
+
+.content-box {
+    padding: 2em 10%;
+}
+
+#main-footer{
+    background-color: darkgrey;
+}
+
+    .footer-box {
+        display: grid;
+        grid-template-columns: minmax(300px, 65%) minmax(231px,35%);
+    }
+
+    .footer-item{
+        padding: 0 0.5em;
+    }
+
+    /* TODO: Media Querys for responsive design*/
+
+

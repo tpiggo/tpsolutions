@@ -1,0 +1,531 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>Tim's Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        body {
+            min-width: 350px;
+            margin: 0;
+        }
+
+        .font-ten {
+            font-size: 8px;
+        }
+
+        .font-twelve {
+            font-size: 10px;
+        }
+
+        .font-fam {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #topline {
+            background-color: #004845;
+            padding: 2px 65px 5px 65px;
+        }
+
+        #topline #toplist-left {
+            float: left;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        #topline #toplist-right {
+            float: right;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        a.top-link {
+            font-size: 10px;
+            color: #81b088;
+        }
+
+        #header-box {
+            background-color: #00885b;
+        }
+
+        #header-box .header-box-item {
+            color: white;
+            display: inline-block;
+        }
+
+        #nav-bar {
+            background-color: #70b786;
+            padding: 0px 49px;
+            overflow: hidden;
+        }
+
+        #nav-bar .nav-bar-item {
+            float: left;
+            display: block;
+            padding: 10px 16px;
+            text-decoration: none;
+            color: black;
+        }
+
+        #nav-bar .nav-bar-item:hover {
+            background-color: green;
+        }
+
+        #main-container {
+            display: grid;
+            grid-template-columns: minmax(310px, 70%) 1fr;
+            padding: 0 65px;
+        }
+
+        #main-container #main-section {
+            position: relative;
+            padding: 30px 30px 20px 0;
+        }
+
+        .main-article-item {
+            padding-bottom: 16px;
+        }
+
+        .article-title {
+            margin: 0;
+            font-size: 16px;
+            color: #464344;
+            font-weight: 600;
+        }
+
+        .article-info {
+            margin: 5px 0;
+            font-size: 7px;
+        }
+
+        .article-paragraph {
+            margin: 0;
+        }
+
+        .article-link {
+            text-decoration: none;
+            color: green;
+        }
+
+        .indented-paragraph {
+            margin: 10px 0 10px 25px;
+            padding: 5px 5px;
+            border-left: 2px solid green;
+        }
+
+        .non-article-list {
+            margin: 5px 0;
+            padding-left: 30px;
+        }
+
+        #main-container #main-aside {
+            position: relative;
+        }
+
+        #aside-box {
+            background-color: #d6ddd2;
+        }
+
+        .aside-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 30px 20px 20px 20px;
+        }
+
+        .al_t {
+            font-size: 12px;
+        }
+
+        .inner-aside-list {
+            list-style-type: none;
+            padding: 3px 0px 8px 11px;
+        }
+
+        .inner-aside-list li a {
+            color: black;
+            text-decoration: none;
+        }
+
+        #main-footer {
+            background-color: #00442e;
+            padding: 17px 75px;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+
+        .footer-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 10px;
+            color: white;
+        }
+
+        .footer-head {
+            margin: 0 0 10px 0;
+            color: #81b088;
+        }
+
+        .footer-list-item a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer-info {
+            list-style-type: none;
+            font-size: 8px;
+            margin: 0;
+            text-align: right;
+        }
+
+        #nav-bar .nav-bar-item.icon {
+            display: none;
+        }
+
+        @media screen and (max-width:600px) {
+
+            #topline #toplist-left {
+                float: none;
+                padding-bottom: 5px;
+            }
+
+            #topline #toplist-right {
+                float: none;
+            }
+
+            #nav-bar .nav-bar-item:not(:first-child) {
+                display: none;
+            }
+
+            #nav-bar .nav-bar-item:last-child {
+                float: right;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            #main-container {
+                display: grid;
+                grid-template-columns: minmax(130px, 60%) 1fr;
+                padding: 0 65px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            /* This is the CSS for the interactive nav bar*/
+            #nav-bar.interactive {
+                position: relative;
+            }
+
+            #nav-bar.interactive .nav-bar-item:last-child {
+                position: absolute;
+                top: 0;
+                right: 49px;
+            }
+
+            #nav-bar.interactive .nav-bar-item {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        @media screen and (max-width:550px){
+            #header-box ul .header-box-item:last-child {
+                padding-top: 5px;
+            }
+        }
+
+        @media screen and (max-width: 498px) {
+            #main-footer #footer-right {
+                padding: 0;
+                grid-column: 2 span;
+            }
+
+            #main-footer #footer-right .footer-info {
+                text-align: center;
+                padding: 0;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            #main-footer #footer-right {
+                padding: 0;
+                grid-column: 1 span;
+            }
+
+            #main-footer #footer-left {
+                text-align: center;
+            }
+
+            #main-footer #footer-middle {
+                text-align: center;
+            }
+        }
+    </style>
+    <script>
+        // These are the "old colours". By doing this, we hold the next type here, return the old type back into here
+        // Essentially its a way of looping over the colours. Simple
+        var arr_colours = ['#000080', '#87CEEB', '#0000FF', '#1E90FF', "blue", '#87CEEB',
+            '2px solid blue', '#D0DAE0' ,'#00008B', '#87CEEB', '#87CEEB']
+
+        function changeOnColour(i, index, change) {
+            var rules = document.styleSheets[1].cssRules;
+            if (change == "backgroundColor") {
+                var holder = rules[i].style.backgroundColor;
+                rules[i].style.backgroundColor = arr_colours[index];
+                arr_colours[index] = holder;
+            } else if (change == "color") {
+                var holder = rules[i].style.color;
+                rules[i].style.color = arr_colours[index];
+                arr_colours[index] = holder;
+            } else if (change == "borderLeft") {
+                var holder = rules[i].style.borderLeft;
+                rules[i].style.borderLeft = arr_colours[index];
+                arr_colours[index] = holder;
+            } else {
+                console.log("Not available!");
+            }
+        }
+
+        function changeColour() {
+            changeOnColour(4, 0, "backgroundColor");
+            changeOnColour(7, 1, "color");
+            changeOnColour(8, 2, "backgroundColor");
+            changeOnColour(10, 3, "backgroundColor");
+            changeOnColour(12, 4, "backgroundColor");
+            changeOnColour(19, 5, "color");
+            changeOnColour(20, 6, "borderLeft");
+            changeOnColour(23, 7, "backgroundColor");
+            changeOnColour(28, 8, "backgroundColor");
+            changeOnColour(30, 9, "color");
+            // Finding the footer info element.
+            holder = document.getElementsByClassName("footer-info")[0].style.color;
+            document.getElementsByClassName("footer-info")[0].style.color = arr_colours[10];
+            arr_colours[10] = holder;
+        }
+
+        function iconClicked() {
+            var nav = document.getElementById("nav-bar");
+            if (nav.className == "") {
+                nav.className += "interactive"
+            } else {
+                nav.className = "";
+            }
+        }
+
+    </script>
+</head>
+<body class="font-fam">
+    <!-- Line above header-->
+    <div id="header-container">
+        <div id="topline">
+            <!-- Dividing the left and right side into two different divs and floating right and left.-->
+            <div id="toplist-left" class="font-ten">
+                Welcome, Guest
+                <a href="https://www.w3schools.com/howto/howto_css_login_form.asp" target="_blank" class="top-link">Login</a>
+                <a href="register.html" target="_blank" class="top-link">Sign Up</a>
+            </div>
+            <div id="toplist-right" class="font-ten">
+                Stay Updated
+                <a href="https://copyblogger.com/what-the-heck-is-rss/" target="_blank" class="top-link">Subcribe via RSS</a>
+                <a href="https://gmail.com/" target="_blank" class="top-link">Email Notifications</a>
+            </div>
+            <!-- Floating the objects left ruins the page interface
+            therefore, we must clear this before we move on
+              -->
+            <div style="clear:both"></div>
+        </div>
+        <!-- Header space -->
+        <div id="header-box">
+            <ul style="margin:0; padding: 25px 65px">
+                <li class="header-box-item" style="font-size:30px; padding: 0 25px 0 0">My Blog</li>
+                <li class="header-box-item" style="font-size:20px;">The description goes here</li>
+            </ul>
+        </div>
+        <!-- Main nav bar-->
+        <nav id="nav-bar">
+            <a class="nav-bar-item" href="https://www.homehardware.ca/" target="_blank">HOME</a>
+            <a class="nav-bar-item" href="https://www.merriam-webster.com/dictionary/about" target="_blank">ABOUT</a>
+            <a class="nav-bar-item" href="https://en.wikipedia.org/wiki/Blog" target="_blank">BLOG</a>
+            <a class="nav-bar-item" href="https://en.wikipedia.org/wiki/Contact_(1997_American_film)" target="_blank">CONTACT</a>
+            <a class="nav-bar-item" href="javascript:void(0)" onclick="changeColour()">COLOUR</a>
+            <a class="nav-bar-item icon" href="javascript:void(0)" onclick="iconClicked()"><i class="fa fa-bars"></i></a>
+        </nav>
+    </div>
+    <!-- Main container box. Will house both the aside and body section-->
+    <div id="main-container">
+        <section id="main-section">
+            <!-- First article-->
+            <article class="main-article-item">
+                <p class="article-title">Don't Cancel Chuck!</p>
+                <div class=" text-box">
+                    <p class="article-info">
+                        on July 01 in <a href="https://en.wikipedia.org/wiki/General_officer" target="_blank" class="article-link">General</a>
+                        tagged <a href="https://petitions.ourcommons.ca/en/Home/Index" target="_blank" class="article-link">petitions</a> by <a href="https://marmelab.com/react-admin/" target="_blank" class="article-link">admin</a>
+                    </p>
+                    <p class="article-paragraph font-ten">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                        est laborum.
+                    </p>
+                    <div class="indented-left-line font-ten">
+                        <p class="indented-paragraph">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                        </p>
+                    </div>
+                    <p class="article-paragraph font-ten">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                        est laborum. <a href="https://www.w3schools.com/howto/howto_js_read_more.asp" target="_blank" class="article-link"><b>Read More</b></a>
+                    </p>
+                </div>
+            </article>
+            <!-- Second article-->
+            <article class="main-article-item">
+                <p class="article-title">Alien Spacecraft found in New Mexico</p>
+                <div class=" text-box">
+                    <p class="article-info">
+                        on July 01 in <a href="https://en.wikipedia.org/wiki/General_officer" target="_blank" class="article-link">General</a>
+                        tagged <a href="https://petitions.ourcommons.ca/en/Home/Index" target="_blank" class="article-link">petitions</a> by <a href="https://marmelab.com/react-admin/" target="_blank" class="article-link">admin</a>
+                    </p>
+                    <p class="article-paragraph font-ten">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                    </p>
+                    <ul class="font-ten">
+                        <li>Lorem ipsum dolor sit amet</li>
+                        <li>Consectetur adipiscing elit</li>
+                        <li>Sed do eiusmod tempor incididunt ut</li>
+                    </ul>
+                    <p class="article-paragraph font-ten">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                    </p>
+                </div>
+            </article>
+            <!-- Third article-->
+            <article class="main-article-item">
+                <p class="article-title">Ghostly Goo In Your Kitchen Sink?</p>
+                <div class=" text-box">
+                    <p class="article-info">
+                        on July 01 in <a href="https://www.thegeneral.com/" target="_blank" class="article-link">General</a>
+                        tagged <a href="https://petitions.ourcommons.ca/en/Home/Index" target="_blank" class="article-link">petitions</a> by <a href="https://en.wikipedia.org/wiki/Administrator" target="_blank" class="article-link">admin</a>
+                    </p>
+                    <p class="article-paragraph font-ten">
+                        <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</b> sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                        est laborum.
+                    </p>
+                </div>
+            </article>
+            <!-- Fourth article-->
+            <div class="main-container-item">
+                <h4 style="margin:0; color: #464344;  font-size: 10px">Header 4</h4>
+                <ol class="non-article-list font-ten">
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                </ol>
+                <div class="indented-left-line font-ten">
+                    <p class="indented-paragraph">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                    </p>
+                </div>
+            </div>
+            <!-- Fifth article-->
+            <div class="main-container-item">
+                <h3 style="margin:0; color: #464344; font-size: 12px; padding-left:2px;">Header Level 3</h3>
+                <ul class="font-ten" style="padding-left:35px">
+                    <li>This should be same size as H4</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                </ul>
+                <ol class="font-ten" style="padding-left:30px">
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Lorem ipsum dolor sit amet</li>
+                </ol>
+            </div>
+        </section>
+        <aside id="main-aside">
+            <div id="aside-box">
+                <ul class="aside-list">
+                    <li class="aside-list-item al_t"><b>Categories</b></li>
+                    <li class="aside-list-item font-twelve">
+                        <ul class="inner-aside-list">
+                            <li><a href="https://muhc.ca/mgh" target="_blank">General</a></li>
+                            <li><a href="https://www.mirror.co.uk/all-about/ghosts" target="_blank">Ghost Sightings</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Roswell_UFO_incident" target="_blank">UFO Crashes</a></li>
+                            <li><a href="https://www.businessinsider.com/true-government-conspiracies-2013-12" target="_blank">Government Coverups</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Jeffrey_Epstein" target="_blank">International Conspiracies</a></li>
+                        </ul>
+                    </li>
+                    <li class="aside-list-item al_t"><b>Recent Posts</b></li>
+                    <li class="aside-list-item font-twelve">
+                        <ul class="inner-aside-list">
+                            <li><a href="https://www.youtube.com/watch?v=tVtsUSJFZ7s&ab_channel=A%26E" target="_blank">Ghost Sighting in Mansion</a></li>
+                            <li><a href="https://www.washingtonpost.com/national-security/2019/09/18/those-ufo-videos-are-real-navy-says-please-stop-saying-ufo/" target="_blank">UFO picked up by satelites</a></li>
+                            <li><a href="https://omrf.org/findings/are-there-mutants-among-us/" target="_blank">Mututants among us?</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Bigfoot" target="_blank">Bigfoot: Fact or Fiction?</a></li>
+                        </ul>
+                    </li>
+                    <li class="aside-list-item al_t"><b>Archives</b></li>
+                    <li class="aside-list-item font-twelve">
+                        <ul class="inner-aside-list">
+                            <li><a href="https://www.onthisday.com/events/date/2008/june" target="_blank">June 2008</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Wikipedia:List_of_the_day/May_2008" target="_blank">May 2008</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=nwmlcAnSnU4&ab_channel=earthTV" target="_blank">April 2008</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Wikipedia:List_of_the_day/March_2008" target="_blank">March 2008</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <!-- Main footer box.-->
+    <footer id="main-footer">
+        <div id="footer-left">
+            <h5 class="footer-head">Links</h5>
+            <ul class="footer-list">
+                <li class="footer-list-item"><a href="https://en.wikipedia.org/wiki/Adobe_Photoshop" target="_blank">Adobe Photoshop-Get Helped!</a></li>
+                <li class="footer-list-item"><a href="https://ntuts.com/" target="_blank">NTuts-N Ways of doing Tutorials!</a></li>
+                <li class="footer-list-item"><a href="https://www.youtube.com/watch?v=C6NRA69SdoM&ab_channel=NeraMorte" target="_blank">Beep Boop I am a filler line!</a></li>
+                <li class="footer-list-item"><a href="https://code.tutsplus.com/articles/what-is-flashtuts--active-103" target="_blank">FlashTuts-Tutorials about Adobe Flash!</a></li>
+            </ul>
+        </div>
+        <div id="footer-middle">
+            <h5 class="footer-head">Follow Our Updates</h5>
+            <ul class="footer-list">
+                <li class="footer-list-item"><a href="https://www.dummies.com/social-media/blogging/how-to-subscribe-to-an-rss-feed-for-your-blog/" target="_blank" style="text-decoration: none;">Subscribe to our RSS</a></li>
+                <li class="footer-list-item"><a href="https://copyblogger.com/what-the-heck-is-rss/" target="_blank">What is RSS?</a></li>
+                <li class="footer-list-item"><a href="https://hotmail.com/" target="_blank">Email Updates Anyone?</a></li>
+            </ul>
+        </div>
+        <div id="footer-right">
+            <ul class="footer-info" style="color:#81b088">
+                <li>Copyright by Me</li>
+                <li>All Rights Reserved</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

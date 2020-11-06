@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block main_container %}
+    <div class="content-box" id="about">
+        <div class="about-item">
+            <h2 class="about-head"> Hello There!</h2>
+            <p id="about-paragraph">
+                My name is Timothy! I'm a U3 student at McGill. Currently learning about Operating systems and Macroeconomics.
+                I love advancing my knowledge and I am very interested in web development. Other interests include:
+                Space flight, aviation, rock music and football (European).
+            </p>
+            <a id="about-btn" href="#contact">Find out more!</a>
+        </div>
+        <div class="about-item"><img class="about-img" src="{{ url_for('.static', filename='images/internet-computer-pic.jpg') }}"></div>
+    </div>
+    <div class="content-box" id="projects">
+        <h2 id="projects-header">My Latest Work</h2>
+        <h3> Web Development</h3>
+        <div class="projects-box">
+            <div id="pid1" class="project-item">
+                <div class="project-image-box">
+                    <a class="project-link" href="basic-blog#project-box">
+                        <img class='project-image' src="{{ url_for('.static', filename='images/blog-page.png') }}">
+                    </a>
+                </div>
+                <p>Simple Blog utilizing HTML with Javascript in combination with CSS to render pages based on specifications.</p>
+            </div>
+            <div id="pid2" class="project-item">
+                <img class='project-image' src="{{ url_for('.static', filename='images/blog-page.png') }}">
+                <p>Building an Apache backend login and registration handler with encryption</p>
+            </div>
+        </div>
+        <h3> Web Development</h3>
+
+        <div class="projects-box">
+            <div id="pid3" class="project-item">
+                <img class='project-image' src="{{ url_for('.static', filename='images/blog-page.png') }}">
+                <p>Handling concurrent connections to a server in C.</p>
+            </div>
+            <div id="pid4" class="project-item">
+                <img class='project-image' src="{{ url_for('.static', filename='images/blog-page.png') }}">
+                <p>Building a concurrent user level threading program using the FCFS scheduling algorithm.</p>
+            </div>
+        </div>
+        <h2>More coming soon!</h2>
+    </div>
+    <div class="content-box" id="skills">
+        <!-- Languages -->
+        <h3>Languages:</h3>
+        <div>
+            <div class="">HTML5</div>
+            <div class="">CSS3</div>
+            <div class="">Javascript</div>
+            <div class="">Python</div>
+            <div class="">PostgreSQL</div>
+            <div class="">C</div>
+            <div class="">oCaml</div>
+            <div class="">Java</div>
+        </div>
+        <!-- Frameworks and backend information -->
+        <h3>Backend/Stacks:</h3>
+        <div>
+            <div class="">Node.js, Express, MongoDB, React</div>
+            <div class="">Flask</div>
+            <div class="">Socket Programming in C</div>
+        </div>
+    </div>
+    <div class="content-box" id="contact">
+        <!-- TODO -->
+        <i class="fas fa-envelope-square"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter-square"></i>
+    </div>
+{% endblock %}

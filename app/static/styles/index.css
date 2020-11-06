@@ -1,0 +1,70 @@
+#about {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: var(--background-color);
+}
+
+.about-item {
+    padding: 0 1em;
+}
+
+.about-head {
+    margin: 0;
+}
+
+#about-paragraph {
+    text-align: justify;
+}
+
+#about-btn {
+    border: none;
+    padding: 0.83em 0.83em;
+    width: 60%;
+    font-size: 15px;
+    border-radius: var(--border-radius-small);
+    background: var(--main-color);
+    text-decoration: none;
+    color: black;
+}
+
+    #about-btn:hover {
+        background-color: white;
+        color: var(--main-color);
+        border: 1px solid var(--main-color);
+    }
+
+.about-img {
+    border: 5px solid var(--main-color);
+    border-radius: var(--border-radius-large);
+    width: 100%;
+}
+
+.projects-box {
+    height: auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid grey;
+}
+
+.project-image {
+    width: 100%;
+}
+
+a.project-link{
+    width: 100%:
+    height: 100%;
+}
+.image-hover{
+    background-color: var(--background-black-transparent);
+    width: 100%:
+    height: 100%;
+    position: absolute;
+}
+/* TODO: Media Querys for responsive design*/
