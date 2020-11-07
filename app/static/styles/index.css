@@ -43,7 +43,7 @@
     height: auto;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .project-item {
@@ -61,11 +61,9 @@ a.project-link{
     width: 100%;
     height: 100%;
 }
-.image-hover{
-    background-color: var(--background-black-transparent);
-    width: 100%;
-    height: 100%;
-    position: absolute;
+
+a.project-link:hover{
+    opacity: 0.5;
 }
 /* TODO: Media Querys for responsive design*/
 
@@ -134,4 +132,31 @@ a.project-link{
     background-color: var(--main-color);
     color:white;
 
+}
+
+
+#carosel-container{
+    background-color: var(--background-color);
+}
+
+.carosel-item{
+    display: grid;
+    place-items: center;
+    background-color: var(--main-color);
+    padding: 5em;
+    border-radius: 3em;
+    border: 3px solid red;
+}
+
+
+@media only screen and (max-width: 750px){
+    #contact{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .skills-item{
+        padding: 0.5em 0;
+    }
 }

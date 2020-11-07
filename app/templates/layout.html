@@ -11,7 +11,7 @@
     <title>TP Solutions</title>
     {% block head %}{% endblock %}
 </head>
-<body>
+<body onload="caroselOnload()">
     <!-- Layout: header portion with body and a footer-->
     <nav id="navbar-container">
         <a id="navbar-icon" href="#home"><img id="logo-icon" src="{{ url_for('.static', filename='images/t-logo2.jpg') }}"></a>
@@ -48,14 +48,14 @@
         <!-- Need contact and SM info here-->
         <div class="footer-box">
             <div class="footer-item" id="full-about-me">
-                <p>Hi! You've finally reached the outro to my page!</p>
+                <h2 class="footer-item-header">About Tim</h2>
                 <p>
                     I started my journey in the Computer Science field at the age of 18 in CEGEP when I took an introductory course on Programming. From this simple
                     yet extremely fun, engaging course, I was thrust into the computer science domain. Starting at McGill as a Computer Science Major and Minor in Economics,
                     I have been pursuing me dreams of programming and economics (weird I know)!
                 </p>
                 <p>
-                    I love to work in teams and develop interesting projects. Moreover, I love to continue my education outside of the classroom. Reading docs and watching
+                    I love to work in teams, develop interesting projects and continue my education outside of the classroom. Reading docs and watching
                     online tutorials in the field, I am confidently acquiring new and fun knowledge.
                 </p>
                 <p>I tend to code my projects from scratch, McGill has taught me well.</p>
@@ -69,7 +69,7 @@
 
             </div>
             <div class="footer-item" id="contact-me">
-                <h3>Say Hello!</h3>
+                <h2 class="footer-item-header">Say Hello!</h2>
                 <div  class="contact-info" id="email">
                     Email: piggott291@gmail.com
                 </div>
@@ -95,4 +95,7 @@
         </div>
     </footer>
 </body>
+<script type="text/javascript" src="{{ url_for('.static', filename='js/index.js') }}"></script>
+{% block js_body %}{% endblock %}
+
 </html>

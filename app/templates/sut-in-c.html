@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
-{% block head %}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('.static', filename='styles/project-pages.css') }}">
+{% endblock %}
 {% block main_container %}
 <div id="project-container">
     <h1 id="project-title">Simple User Level Threading Library</h1>
@@ -12,6 +14,12 @@
         CPU to the next task. IO threads were blocking for opens and reads. Kernel threads must wait until all tasks
         are complete before joining the main thread.
     </div>
-    <a class="github-link" class="project-link" href="https://github.com/tpiggo/simple_user_threads">Source Code</a>
+    <a id="github-link" class="project-link" href="https://github.com/tpiggo/simple_user_threads">Source Code</a>
 </div>
+{% endblock %}
+
+{% block js_body %}
+<script type="text/javascript">
+    document.getElementById('header-btn').href = "#main-footer"
+</script>
 {% endblock %}

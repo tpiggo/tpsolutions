@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
-{% block head %}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('.static', filename='styles/project-pages.css') }}">
+{% endblock %}
 {% block main_container %}
 <div id="project-container">
     <h1 id="project-title">Remote Procedure Call Server</h1>
@@ -11,6 +13,12 @@
         the use of a multi-processes backend was chosen. Every connection had a distinct process which handled the
         connection with the parent process handling the creation, maintenance and shutdown of the program as a whole.
     </div>
-    <a class="github-link" class="project-link" href="https://github.com/tpiggo/rpc_server">Source Code</a>
+    <a id="github-link" class="project-link" href="https://github.com/tpiggo/rpc_server">Source Code</a>
 </div>
+{% endblock %}
+
+{% block js_body %}
+<script type="text/javascript">
+    document.getElementById('header-btn').href = "#main-footer"
+</script>
 {% endblock %}
