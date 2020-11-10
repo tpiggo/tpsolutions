@@ -25,7 +25,7 @@ function caroselControl(id){
     if (controllerElements[id].className != 'far fa-circle active'){
         controllerElements[id].className = 'far fa-circle active';
         caroselElements[id].className = 'carosel-item active';
-        caroselElements[id].style.display="block";
+        caroselElements[id].style.display="flex";
         for (var i = 0; i<controllerElements.length; i++){
             if (controllerElements[i].className =='far fa-circle active' && i!=id ){
                 controllerElements[i].className = 'far fa-circle';
@@ -48,6 +48,6 @@ function caroselSwitch(){
     current_carosel = (current_carosel+1)%5;
     controllerElements[current_carosel].className = 'far fa-circle active';
     caroselElements[current_carosel].className = 'carosel-item active';
-    caroselElements[current_carosel].style.display = 'block';
+    caroselElements[current_carosel].style.display = 'flex';
     caroselTimer = setTimeout(caroselSwitch, 5000);
 }

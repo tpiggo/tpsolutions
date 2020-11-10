@@ -139,15 +139,27 @@ a.project-link:hover{
     background-color: var(--background-color);
 }
 
+#carosel{
+    border-left: 2px solid grey;
+}
 .carosel-item{
-    display: grid;
-    place-items: center;
-    background-color: var(--main-color);
+    align-items: center;
     padding: 5em;
-    border-radius: 3em;
-    border: 3px solid red;
+    max-height: 7em;
 }
 
+#controller-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+}
+i.far.fa-circle::before{
+    font-size: 10px;
+}
+i.far.fa-circle.active::before{
+    font-size: 15px;
+}
 
 @media only screen and (max-width: 750px){
     #contact{
